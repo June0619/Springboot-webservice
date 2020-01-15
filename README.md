@@ -11,4 +11,9 @@
   - Domain 개념
   - 생성자를 이용한 객체 주입
   - PostsApiController -> update Test 실패<br>
-  // title update 반영 되지 않음
+  // title update 반영 되지 않음(해결)
+- 2020-01-15
+  - 오타 수정
+  - @RestController 사용시 객체를 JSON으로 변환
+  - JSON 변환시 기본 생성자와 GETTER가 없으면 변환 불가
+  - 따라서 API응답용 DTO에는 필수적으로 추가해야 
