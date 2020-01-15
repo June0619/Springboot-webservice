@@ -2,6 +2,7 @@ package com.buildsomething.zs.springboot.web;
 
 import com.buildsomething.zs.springboot.domain.posts.Posts;
 import com.buildsomething.zs.springboot.domain.posts.PostsRepository;
+import com.buildsomething.zs.springboot.web.dto.PostsResponseDto;
 import com.buildsomething.zs.springboot.web.dto.PostsSaveRequestDto;
 import com.buildsomething.zs.springboot.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
@@ -102,5 +103,25 @@ public class PostsApiControllerTest
                 isEqualTo(expectedTitle);
         assertThat(all.get(0).getContent()).
                 isEqualTo(expectedContent);
+    }
+
+    @Test
+    public void Posts_조회된다() throws  Exception {
+        //given
+        Posts savePosts = postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        String url = "http://localhost:"+ port + "/api/v1/posts/" + savePosts.getId();
+
+        HttpEntity<String> requestEntity = new HttpEntity<>("");
+
+        //when
+        ResponseEntity<PostsResponseDto> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, PostsResponseDto.class);
+
+        //then
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 }
