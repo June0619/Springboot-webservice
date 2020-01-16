@@ -1,5 +1,9 @@
 # springboot-webservice
 
+* Plugins
+    - mustache
+    - lombok
+
 - 2020-01-10
   - 스프링부트와 AWS로 혼자 구현하는 웹 서비스 시작
   - IntelliJ Tool Box 설치 및 프로젝트 세팅
