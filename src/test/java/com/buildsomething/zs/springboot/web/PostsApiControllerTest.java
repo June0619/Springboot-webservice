@@ -119,9 +119,32 @@ public class PostsApiControllerTest
         HttpEntity<String> requestEntity = new HttpEntity<>("");
 
         //when
-        ResponseEntity<PostsResponseDto> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, PostsResponseDto.class);
+        ResponseEntity<PostsResponseDto> responseEntity = restTemplate.exchange(url, HttpMethod.GET,
+                requestEntity, PostsResponseDto.class);
 
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void Posts_삭제된다() throws Exception
+    {
+        //given
+        Posts posts = postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        String url = "http://localhost:" + port + "/api/v1/posts" + posts.getId();
+
+        HttpEntity<String> deleteEntity = new HttpEntity<>("");
+
+        //when
+        ResponseEntity<PostsResponseDto> responseEntity = restTemplate.exchange(url, HttpMethod.DELETE,
+                deleteEntity, PostsResponseDto.class);
+
+        //then
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 }
