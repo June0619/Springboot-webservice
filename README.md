@@ -33,4 +33,7 @@
     - <참조> git ignore 작동하지 않을때 대응 방법<br>
     https://jojoldu.tistory.com/307
     - OAUTH2.0을 이용한 로그인 api 생성<br>
-    (추가적인 코드리뷰 필수)
+* 2020-01-20
+    - Naver Login API 등록 (과제)
+        - Invalid Token issue
+        - Annotation을 이용해 Session 값 받을 시 NullPointException
