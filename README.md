@@ -34,6 +34,16 @@
     https://jojoldu.tistory.com/307
     - OAUTH2.0을 이용한 로그인 api 생성<br>
 * 2020-01-20
-    - Naver Login API 등록 (과제)
-        - Invalid Token issue
-        - Annotation을 이용해 Session 값 받을 시 NullPointException
+    - Naver Login API 등록 (해결)
+        - Invalid Token
+        - Annotation을 이용해 Session 값 받을 시 NullPointException<br>
+        // WebConfig Class의 addArgumentResolvers 메소드명 오타(override 되지 않음)
+        
+* 2020-01-21     
+    - Spring Security 적용으로 기존 Test Code 인증 문제 해결
+    - Session 저장소로 톰캣 / DB / 메모리 DB 등이 있고 이 중 DB를 사용하는 이유
+    - ArgumentResolver 를 통해 어노테이션으로 로그인 세션 정보 가져오기
+    - Layout 약간 수정
+    - EC2 인스턴스 생성 / 탄력적 IP 할당
+    - pem 키 관리 방법
+    - 리눅스 서버 생성 및 호스트네임 설정
