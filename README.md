@@ -3,6 +3,7 @@
 ### Plugins
     - mustache
     - lombok
+    - Database Navigator
 
 ### Update
 * 2020-01-10
@@ -47,3 +48,9 @@
     - EC2 인스턴스 생성 / 탄력적 IP 할당
     - pem 키 관리 방법
     - 리눅스 서버 생성 및 호스트네임 설정
+* 2020-01-22
+    - AWS RDS 개념과 생성 방법
+    - RDS 서비스를 위한 여러 파라미터 설정
+    - Intellij 에서 DB를 다루는 방법
+    - EC2와 RDS 연동  
+  
