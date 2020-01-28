@@ -58,4 +58,10 @@
     - linux os 쉘 스크립트 이용 방법
     - 스프링 부트 프로젝트와 RDS 연동
     - 배포 과정에서 db driver 읽지 못하는 문제 있음
+* 2020-01-28
+    - DB Driver 인식하지 못하는 문제 해결
+        - linux os 상에서 gradlew -x 권한 부여하지 않아 빌드가 제대로 되지 않았던게 원인
+        - 권한 부여 후 빌드한 뒤 정상적으로 작동 됨
+        - 현재는 ec2 서버상에서 구동중 아래 DNS로 접속 가능
+        - http://ec2-15-165-89-64.ap-northeast-2.compute.amazonaws.com:8080/
   
