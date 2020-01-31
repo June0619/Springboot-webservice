@@ -71,6 +71,10 @@
 * 2020-01-31
     - 배포 자동화 구성 완료
         - 위의 문제는 deploy.sh 스크립트 명령어 오류로 jar 실행코드가 실시되지 않고 있었음.
-    -         
+    - 서버 배포시 오류 로그 확인 방법
+        - /opt/codedeploy-agent/deployment-root/deployment-logs 로그 확인
+        - /var/log/aws/codedeploy-agent/ 로그 확인
+    - 새로운 Jar 실행 시 기존 Jar 종료되는 문제를 해결하기 위한 무중단 배포 시스템 구축
+    
             
   
