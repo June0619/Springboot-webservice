@@ -75,6 +75,9 @@
         - /opt/codedeploy-agent/deployment-root/deployment-logs 로그 확인
         - /var/log/aws/codedeploy-agent/ 로그 확인
     - 새로운 Jar 실행 시 기존 Jar 종료되는 문제를 해결하기 위한 무중단 배포 시스템 구축
+        - EC2 서버 상에 nginx install
+        - nginx 사용을 위한 profile security config 및 test code 작성
+        
     
             
   
