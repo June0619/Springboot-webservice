@@ -77,6 +77,7 @@
     - 새로운 Jar 실행 시 기존 Jar 종료되는 문제를 해결하기 위한 무중단 배포 시스템 구축
         - EC2 서버 상에 nginx install
         - nginx 사용을 위한 profile security config 및 test code 작성
+        - 어플리케이션이 실행중인지 확인 / 교체 / 종료를 진행하는 쉘스크립트 작성
         
     
             
