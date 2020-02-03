@@ -80,9 +80,10 @@
         - 어플리케이션이 실행중인지 확인 / 교체 / 종료를 진행하는 쉘스크립트 작성
 * 2020-02-03
     - linux 상에서 현재 실행중인 어플리케이션 추적 : ps -ef | grep java
-    - nginx 를 이용한 무중단 배포 중 heath check 실패 문제
+    - nginx 를 이용한 무중단 배포 중 heath check 실패 문제(해결)
         - health check 실패로 배포 로그에 time out 에러가 찍힘
-        - 배포 과정자체는 실행되지만 health check 실패로 프록시 스위칭이 진행되지 않고 8081포트로만 배포가 진행됨         
-    
+        - 배포 과정자체는 실행되지만 health check 실패로 프록시 스위칭이 진행되지 않고 8081포트로만 배포가 진행됨
+        - ProfileController realProfiles 리스트 오타로 인해 health check 상에서 real1 프로필 체크가 불가능했던것이 원인이었음.         
+    - nginx 상에서는 port 8082로 교체 진행되나 로그 상에는 8081 포트로 실행되는 문제 발견
             
   
