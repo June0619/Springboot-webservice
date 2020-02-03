@@ -78,7 +78,11 @@
         - EC2 서버 상에 nginx install
         - nginx 사용을 위한 profile security config 및 test code 작성
         - 어플리케이션이 실행중인지 확인 / 교체 / 종료를 진행하는 쉘스크립트 작성
-        
+* 2020-02-03
+    - linux 상에서 현재 실행중인 어플리케이션 추적 : ps -ef | grep java
+    - nginx 를 이용한 무중단 배포 중 heath check 실패 문제
+        - health check 실패로 배포 로그에 time out 에러가 찍힘
+        - 배포 과정자체는 실행되지만 health check 실패로 프록시 스위칭이 진행되지 않고 8081포트로만 배포가 진행됨         
     
             
   
