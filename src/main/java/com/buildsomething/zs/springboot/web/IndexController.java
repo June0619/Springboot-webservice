@@ -2,7 +2,6 @@ package com.buildsomething.zs.springboot.web;
 
 import com.buildsomething.zs.springboot.config.auth.LoginUser;
 import com.buildsomething.zs.springboot.config.auth.dto.SessionUser;
-import com.buildsomething.zs.springboot.domain.user.User;
 import com.buildsomething.zs.springboot.service.posts.PostsService;
 import com.buildsomething.zs.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -13,23 +12,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
 
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController
 {
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user)
+    public String index(HttpSession session, @LoginUser SessionUser user)
     {
-        model.addAttribute("posts", postsService.findAllDesc());
-
         if (user != null)
-            model.addAttribute("userName", user.getName());
-
+            session.setAttribute("userName", user.getName());
         return "index";
     }
+    @GetMapping("/posts-list")
+    public String postsList(Model model, @LoginUser SessionUser user)
+    {
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "posts-list";
+    }
+
     @GetMapping("/posts/save")
     public String postsSave()
     {

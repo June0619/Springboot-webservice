@@ -85,5 +85,15 @@
         - 배포 과정자체는 실행되지만 health check 실패로 프록시 스위칭이 진행되지 않고 8081포트로만 배포가 진행됨
         - ProfileController realProfiles 리스트 오타로 인해 health check 상에서 real1 프로필 체크가 불가능했던것이 원인이었음.         
     - nginx 상에서는 port 8082로 교체 진행되나 로그 상에는 8081 포트로 실행되는 문제 발견
+        - 쉘 스크립트상 오타가 원인이었음
+    - 무중단 배포까지 문제없이 작동 확인
+        - http://ec2-15-165-89-64.ap-northeast-2.compute.amazonaws.com
+* 중간 목표
+    - 내부 로직 복습
+    - 프론트 추가
+    - Domain
+    - 권한 재설정
+
+    
             
   

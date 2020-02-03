@@ -2,10 +2,27 @@
 <html>
 <head>
     <title>Build Something</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 <div class="container">
+    <header>
+        <div id="header">
+            <div class="title"><a href="/">Build Something</a></div>
+                <div class="menu">
+                    {{^userName}}
+                        <a href="login">Login</a> |
+                    {{/userName}}
+                    {{#userName}}
+                        <a href="logout">Logout</a> |
+                        <a href="My page">My Page</a> |
+                        <a href="posts-list">Board</a>
+                    {{/userName}}
+                </div>
+        </div>
+        <hr>
+    </header>

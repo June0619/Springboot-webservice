@@ -1,1 +1,3 @@
-.title {font-size: 30px;}
+.container { width: 800px;}
+.title{ font-size: 55px; font-family:'Anton', sans-serif; text-color:black; decoration:none; }
+footer { font-family: 'Patua One', cursive; font-size: 30px; }
