@@ -94,6 +94,7 @@
     - Domain
     - 권한 재설정
 
-    
-            
+* 2020-02-07
+    - mustache 템플릿 상에서 세션 값을 사용하려면 properties 파일에 별도 설정이 필요함
+        - spring.mustache.expose-session-attributes=true
   

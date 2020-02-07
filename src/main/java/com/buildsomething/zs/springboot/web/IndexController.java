@@ -26,7 +26,7 @@ public class IndexController
             session.setAttribute("userName", user.getName());
         return "index";
     }
-    @GetMapping("/posts-list")
+    @GetMapping("/board")
     public String postsList(Model model, @LoginUser SessionUser user)
     {
         model.addAttribute("posts", postsService.findAllDesc());

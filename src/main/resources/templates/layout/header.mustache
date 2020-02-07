@@ -6,23 +6,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton|Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
 <div class="container">
     <header>
-        <div id="header">
-            <div class="title"><a href="/">Build Something</a></div>
-                <div class="menu">
+        <div id="header" class="row">
+            <div id="headline" class="col-md-12"><a href="/">Build Something</a></div>
+                <div class="col-auto">
                     {{^userName}}
-                        <a href="login">Login</a> |
+                        <a href="login">Login</a>
                     {{/userName}}
                     {{#userName}}
                         <a href="logout">Logout</a> |
                         <a href="My page">My Page</a> |
-                        <a href="posts-list">Board</a>
+                        <a href="board">Board</a>
                     {{/userName}}
                 </div>
         </div>
         <hr>
     </header>
+</div>
+<div class="container">
