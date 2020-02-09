@@ -74,7 +74,7 @@ public class PostsApiControllerTest
     }
 
     @Test
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles="GUEST")
     public void Posts_insert() throws Exception
     {
         //given
@@ -100,7 +100,7 @@ public class PostsApiControllerTest
     }
 
     @Test
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles="GUEST")
     public void Posts_Modify() throws Exception
     {
         //given
