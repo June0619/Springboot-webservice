@@ -1,27 +1,15 @@
 #!/bin/bash
 
-REPOSITORY=/home/ec2-user/app/step1
-PROJECT_NAME=springboot-webservice
-
-cd $REPOSITORY/$PROJECT_NAME/
-
-echo "> Git Pull"
-
-git pull
-
-./gradlew build
-
-echo "> step1 디렉토리로 변경"
-
-cd $REPOSITORY
+REPOSITORY=/home/ec2-user/app/step3
+PROJECT_NAME=springboot -webservice
 
 echo "> Build 파일 복사"
 
-cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
+cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션 pid 확인"
 
-CURRENT_PID=$(pgrep -f ${PROJECT_NAME}*.jar)
+CURRENT_PID=$(pgrep -fl springboot-webservice | grep jar | awk '{print $1}')
 
 echo "현재 구동중인 어플리케이션 pid: $CURRENT_PID"
 
@@ -35,7 +23,7 @@ fi
 
 echo "> 새 어플리케이션 배포"
 
-JAR_NAME=$(ls -tr $REPOSITORY/ | grep *.jar | tail -n 1)
+JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n 1)
 
 echo "> JAR Name: $JAR_NAME"
 
