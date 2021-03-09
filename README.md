@@ -7,6 +7,7 @@
 
 ### Update
 * 2020-01-10
+  - 스프링부트와 AWS로 혼자 구현하는 웹 서비스 시작
   - IntelliJ Tool Box 설치 및 프로젝트 세팅
   - Gradle 의존성 주입 및 환경설정
   - JUnit을 통한 테스트코드 작성의 중요성 및 간단한 테스트코드 실습
@@ -20,7 +21,7 @@
 
 * 2020-01-15
   - 오타 수정
-  - @RestController 사용시 객체를 JSON으로 반환
+  - @RestController 사용시 객체를 JSON으로 변환
   - JSON 변환시 기본 생성자와 GETTER가 없으면 변환 불가
   - 따라서 API응답용 DTO에는 필수적으로 추가해야 함
 
@@ -33,6 +34,7 @@
     - <참조> git ignore 작동하지 않을때 대응 방법<br>
     https://jojoldu.tistory.com/307
     - OAUTH2.0을 이용한 로그인 api 생성<br>
+    
 * 2020-01-20
     - Naver Login API 등록 (해결)
         - Invalid Token
@@ -47,6 +49,7 @@
     - EC2 인스턴스 생성 / 탄력적 IP 할당
     - pem 키 관리 방법
     - 리눅스 서버 생성 및 호스트네임 설정
+    
 * 2020-01-22
     - AWS RDS 개념과 생성 방법
     - RDS 서비스를 위한 여러 파라미터 설정
@@ -87,11 +90,6 @@
         - 쉘 스크립트상 오타가 원인이었음
     - 무중단 배포까지 문제없이 작동 확인
         - http://ec2-15-165-89-64.ap-northeast-2.compute.amazonaws.com
-* 중간 목표
-    - 내부 로직 복습
-    - 프론트 추가
-    - Domain
-    - 권한 재설정
 
 * 2020-02-07
     - mustache 템플릿 상에서 세션 값을 사용하려면 properties 파일에 별도 설정이 필요함
@@ -99,3 +97,7 @@
     - CSS & template 수정 중...
         - Test Code 수정 필요
   
+* 2021-03-09
+    - EC2 Server 라이브 시키기
+    - 반응형으로 수정
+    - git ignore setting

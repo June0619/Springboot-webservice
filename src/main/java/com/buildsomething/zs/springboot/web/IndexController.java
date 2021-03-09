@@ -33,6 +33,12 @@ public class IndexController
         return "posts-list";
     }
 
+    @GetMapping("/myPage")
+    public String myPage(Model model, @LoginUser SessionUser user) {
+
+        return "myPage";
+    }
+
     @GetMapping("/posts/save")
     public String postsSave()
     {
