@@ -7,19 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 // JSON을 반환하는 컨트롤러 생성
-public class HelloController
-{
+public class HelloController {
 
     @GetMapping("/hello")
-    public String hello()
-    {
+    public String hello() {
         return "hello";
     }
 
     @GetMapping("/hello/dto")
     public HelloResponseDTO hellodto(@RequestParam("name") String name,
-                                     @RequestParam("amount") int amount)
-    {
+                                     @RequestParam("amount") int amount) {
         return new HelloResponseDTO(name, amount);
     }
 

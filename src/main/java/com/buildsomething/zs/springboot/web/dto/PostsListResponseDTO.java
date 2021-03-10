@@ -2,23 +2,22 @@ package com.buildsomething.zs.springboot.web.dto;
 
 import com.buildsomething.zs.springboot.domain.posts.Posts;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Getter
-@NoArgsConstructor
-public class PostsResponseDto
+public class PostsListResponseDTO
 {
     private Long id;
     private String title;
-    private String content;
     private String author;
+    private LocalDateTime modifiedDate;
 
-    public PostsResponseDto(Posts entity)
+    public PostsListResponseDTO(Posts entity)
     {
         this.id = entity.getId();
         this.title = entity.getTitle();
-        this.content = entity.getContent();
         this.author = entity.getAuthor();
+        this.modifiedDate = entity.getModifiedDate();
     }
-
 }
