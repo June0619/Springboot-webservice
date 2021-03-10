@@ -2,9 +2,8 @@ package com.buildsomething.zs.springboot.web;
 
 import com.buildsomething.zs.springboot.domain.posts.Posts;
 import com.buildsomething.zs.springboot.domain.posts.PostsRepository;
-import com.buildsomething.zs.springboot.web.dto.PostsResponseDto;
-import com.buildsomething.zs.springboot.web.dto.PostsSaveRequestDto;
-import com.buildsomething.zs.springboot.web.dto.PostsUpdateRequestDto;
+import com.buildsomething.zs.springboot.web.dto.PostsSaveRequestDTO;
+import com.buildsomething.zs.springboot.web.dto.PostsUpdateRequestDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
@@ -15,10 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -26,9 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -80,7 +73,7 @@ public class PostsApiControllerTest
         //given
         String title = "title";
         String content = "content";
-        PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
+        PostsSaveRequestDTO requestDto = PostsSaveRequestDTO.builder()
                 .title(title)
                 .content(content)
                 .author("author")
@@ -114,14 +107,14 @@ public class PostsApiControllerTest
         String expectedTitle = "title2";
         String expectedContent = "content2";
 
-        PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
+        PostsUpdateRequestDTO requestDto = PostsUpdateRequestDTO.builder()
                 .title(expectedTitle)
                 .content(expectedContent)
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
 
-        HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
+        HttpEntity<PostsUpdateRequestDTO> requestEntity = new HttpEntity<>(requestDto);
 
         //when
         mvc.perform(put(url)
@@ -176,8 +169,8 @@ public class PostsApiControllerTest
 //        HttpEntity<String> deleteEntity = new HttpEntity<>("");
 //
 //        //when
-//        ResponseEntity<PostsResponseDto> responseEntity = restTemplate.exchange(url, HttpMethod.DELETE,
-//                deleteEntity, PostsResponseDto.class);
+//        ResponseEntity<PostsResponseDTO> responseEntity = restTemplate.exchange(url, HttpMethod.DELETE,
+//                deleteEntity, PostsResponseDTO.class);
 //
 //        //then
 //        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
