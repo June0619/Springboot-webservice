@@ -15,15 +15,16 @@
             <div id="headline" class="col-md-12"><a href="/">Build Something</a></div>
                 <div class="col-auto">
                     {{^userName}}
-                        <a href="login">Login</a>
+                        <a href="/login">Login</a>
                     {{/userName}}
                     {{#userName}}
-                        <a href="logout">Logout</a> |
-                        <a href="myPage">My Page</a> |
-                        <a href="board">Board</a>
+                        <a href="/logout">Logout</a> |
+                        <a href="/myPage">My Page</a> |
+                        <a href="/board">Board</a>
                     {{/userName}}
                 </div>
         </div>
+
         <hr>
     </header>
 </div>
